@@ -10,25 +10,40 @@ DummyHealth=20
 DummyHappy=3
 DummyName$="froggit"
 PRINT DummyName$; " HAS APEARED!"
+
 PRINT "1. FIGHT"
 PRINT "2. ACT"
 PRINT "3. ITEM"
 PRINT "4. MERCY"
+
 DO
 INPUT "action:" ;choice
+
     SELECT CASE choice
 
+
         CASE 1
+
             GOSUB 300
+
         CASE 2
+
             GOSUB 310
+
         CASE 3
+
             GOSUB 320
+
         CASE 4
+
             GOSUB 330
+
             END
+
         CASE ELSE
+
             PRINT "Invalid choice. Please enter a number from the menu."
+
     END SELECT
 if DummyHappy = 0 then
 PRINT DummyName$
@@ -46,10 +61,15 @@ PRINT "and"
 PRINT NumGold
 end
 end if
+
 LOOP UNTIL TRUE
+
 END
+
 300 REM
+
 PRINT DummyName$
+
 RandomDamege=int(rnd(1)*5)
 PRINT "took "; RandomDamege; " damege!"
 DummyHealth=DummyHealth - RandomDamege
@@ -58,11 +78,14 @@ RandomDamege=int(rnd(1)*5)
 PRINT "You got "; RandomDamege; " damege!"
 YourHealth=YourHealth-RandomDamege
 PRINT "YourHealth "; YourHealth
+
 if YourHealth <= 0 then
     Print "You loose"
     end
 end if
+
 RETURN
+
 310 REM
 PRINT "you complement"
 PRINT DummyName$
@@ -73,6 +96,8 @@ PRINT "You got "; RandomDamege; " damege!"
 YourHealth=YourHealth-RandomDamege
 PRINT "YourHealth "; YourHealth
 RETURN
+
+
 
 320 REM
 PRINT "CHOSE ITEM"
@@ -108,6 +133,8 @@ PRINT "Your Health ";YourHealth
 RETURN
 RETURN
 
+
+
 330 REM
 IF DummySpare>0 THEN
 PRINT DummyName$
@@ -125,4 +152,5 @@ PRINT "and"
 PRINT NumGold
 end
 end if
+
 RETURN

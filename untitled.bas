@@ -9,10 +9,7 @@ YourHealth=20
 DummyHealth=20
 DummyHappy=3
 DummyName$="testname"
-PRINT DummyName$
-PRINT DummyHappy
-PRINT DummyHealth
-
+PRINT DummyName$; " HAS APEARED!"
 PRINT "1. FIGHT"
 PRINT "2. ACT"
 PRINT "3. ITEM"
@@ -39,7 +36,7 @@ PRINT "is smiling"
 DummySpare=0
 end
 end if
-if DummyHealth = 0 then
+if DummyHealth <= 0 then
 NumXP=NumXP+int(rnd(1)*2)
 NumGold=NumGold+int(rnd(1)*10)
 PRINT "YOU WON!"

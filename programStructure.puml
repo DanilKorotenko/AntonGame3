@@ -1,0 +1,87 @@
+@startuml ProgramStructure
+start
+:Init variables;
+
+:Print menu;
+
+repeat
+
+:input action;
+
+switch(Action)
+case (fight)
+    :took randomDamage;
+    :got random damage;
+    if (YourHealth <= 0) then (true)
+        stop
+    endif
+
+case (act)
+    :you complement
+    It seems flattered;
+    :DummyHappy=DummyHappy - 1;
+    :you got random damage;
+
+case (item)
+
+    switch(CHOOSE ITEM)
+        case (monster candy +5 hp)
+            :Health + 5;
+        case (sea tea(+9 hp))
+            :Health + 13;
+        case (Butterscotch-Cinnamon Pie+19 hp)
+            :Health + 19;
+        case (else)
+            :you dont have this item...;
+    endswitch
+
+case (mercy)
+    if (DummySpare>0) then (true)
+        :DummyName$ is too angry to be spared;
+        stop
+    endif
+
+    if (DummySpare=0) then (true)
+        :got XP;
+        :Got gold;
+        :you won!;
+        stop
+    endif
+
+endswitch
+
+if (DummyHappy = 0) then (true)
+    :PRINT DummyName$; "is smiling";
+    :DummySpare=DummySpare=-1;
+endif
+
+if (DummyHealth <= 0) then (true)
+    :Got XP;
+    :Got gold;
+    :You win;
+    stop
+endif
+
+repeat while (true)
+
+'DO
+
+'    SELECT CASE choice
+
+'        CASE 4
+
+'            GOSUB 330
+
+'            END
+
+'        CASE ELSE
+
+'            PRINT "Invalid choice. Please enter a number from the menu."
+
+'    END SELECT
+
+'LOOP UNTIL TRUE
+
+'END
+
+@enduml

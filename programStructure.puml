@@ -12,9 +12,6 @@ switch(Action)
 case (fight)
     :took randomDamage;
     :got random damage;
-    if (YourHealth <= 0) then (true)
-        stop
-    endif
 
 case (act)
     :you complement
@@ -48,6 +45,10 @@ case (mercy)
     endif
 
 endswitch
+
+if (YourHealth <= 0) then (true)
+    stop
+endif
 
 if (DummyHappy = 0) then (true)
     :PRINT DummyName$; "is smiling";

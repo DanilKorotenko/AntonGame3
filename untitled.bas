@@ -43,20 +43,24 @@ INPUT "action:" ;choice
 
     END SELECT
 if DummyHappy = 0 then
-PRINT DummyName$; "is smiling"
-DummySpare=DummySpare=-1
+    PRINT DummyName$; "is smiling"
+    DummySpare=DummySpare=-1
 end if
 if DummyHealth <= 0 then
-NumXP=NumXP+int(rnd(1)*2)
-NumGold=NumGold+int(rnd(1)*10)
-PRINT "YOU WON!"
-PRINT "you got" ;NumXP
-PRINT "and" ;NumGold
-end
+    NumXP=NumXP+int(rnd(1)*2)
+    NumGold=NumGold+int(rnd(1)*10)
+    PRINT "YOU WON!"
+    PRINT "you got" ;NumXP
+    PRINT "and" ;NumGold
+    end
+end if
+
+if YourHealth <= 0 then
+    Print "You loose"
+    end
 end if
 
 LOOP UNTIL TRUE
-
 END
 
 300 REM

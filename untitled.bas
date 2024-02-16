@@ -17,115 +17,114 @@ PRINT "3. ITEM"
 PRINT "4. MERCY"
 
 DO
-INPUT "action:" ;choice
-
-    SELECT CASE choice
-
-
+    INPUT "action:" ;actionChoice
+    SELECT CASE actionChoice
         CASE 1
-
             GOSUB 300
-
         CASE 2
-
             GOSUB 310
-
         CASE 3
-
             GOSUB 320
-
         CASE 4
-
             GOSUB 330
         CASE ELSE
-
             PRINT "Invalid choice. Please enter a number from the menu."
-
     END SELECT
-if DummyHappy = 0 then
-    PRINT DummyName$; "is smiling"
-    DummySpare=DummySpare=-1
-end if
-if DummyHealth <= 0 then
-    NumXP=NumXP+int(rnd(1)*2)
-    NumGold=NumGold+int(rnd(1)*10)
-    PRINT "YOU WON!"
-    PRINT "you got" ;NumXP
-    PRINT "and" ;NumGold
-    end
-end if
 
-if YourHealth <= 0 then
-    Print "You loose"
-    end
-end if
+    if YourHealth <= 0 then
+        Print "You loose"
+        end
+    end if
+
+    if DummyHappy = 0 then
+        PRINT DummyName$; "is smiling"
+        DummySpare=DummySpare=-1
+    end if
+
+    if DummyHealth <= 0 then
+        NumXP=NumXP+int(rnd(1)*2)
+        NumGold=NumGold+int(rnd(1)*10)
+        PRINT "YOU WON!"
+        PRINT "you got" ;NumXP
+        PRINT "and" ;NumGold
+        end
+    end if
 
 LOOP UNTIL TRUE
+
 END
 
 300 REM
-
-PRINT DummyName$
-
-RandomDamege=int(rnd(1)*5)
-PRINT "took "; RandomDamege; " damege!"
-DummyHealth=DummyHealth - RandomDamege
-PRINT "DummyHealth "; DummyHealth
-RandomDamege=int(rnd(1)*5)
-PRINT "You got "; RandomDamege; " damege!"
-YourHealth=YourHealth-RandomDamege
-PRINT "YourHealth "; YourHealth
-
-if YourHealth <= 0 then
-    Print "You loose"
-    end
-end if
-
+    PRINT DummyName$
+    RandomDamege=int(rnd(1)*5)
+    PRINT "took "; RandomDamege; " damege!"
+    DummyHealth=DummyHealth - RandomDamege
+    PRINT "DummyHealth "; DummyHealth
+    RandomDamege=int(rnd(1)*5)
+    PRINT "You got "; RandomDamege; " damege!"
+    YourHealth=YourHealth-RandomDamege
+    PRINT "YourHealth "; YourHealth
 RETURN
 
 310 REM
-PRINT "you complement" ;DummyName$
-PRINT "It seems flattered"
-DummyHappy=DummyHappy - 1
-RandomDamege=int(rnd(1)*5)
-PRINT "You got "; RandomDamege; " damege!"
-YourHealth=YourHealth-RandomDamege
-PRINT "YourHealth "; YourHealth
+    PRINT "you complement" ;DummyName$
+    PRINT "It seems flattered"
+    DummyHappy=DummyHappy - 1
+    RandomDamege=int(rnd(1)*5)
+    PRINT "You got "; RandomDamege; " damege!"
+    YourHealth=YourHealth-RandomDamege
+    PRINT "YourHealth "; YourHealth
 RETURN
 
-
-
 320 REM
-PRINT "CHOSE ITEM"
-PRINT ItemMC; "monster candy(+5 hp)"
-PRINT ItemST; "sea tea(+9 hp)"
-PRINT ItemBCP; "Butterscotch-Cinnamon Pie(+19 hp)"
-INPUT "Item:" ;choice
-SELECT CASE choice
+    PRINT "CHOSE ITEM"
+    PRINT "1. "; ItemMC; " monster candy(+5 hp)"
+    PRINT "2. "; ItemST; " sea tea(+9 hp)"
+    PRINT "3. "; ItemBCP; " Butterscotch-Cinnamon Pie(+19 hp)"
+    INPUT "Item:" ;itemChoice
+    SELECT CASE itemChoice
         CASE 1
             GOSUB 100
         CASE 2
             GOSUB 110
         CASE 3
             GOSUB 120
-  END
+
         CASE ELSE
             PRINT "you dont have this item..."
- END SELECT
-100 REM
-YourHealth=YourHealth+5
-PRINT "Your Health ";YourHealth
-RETURN
-110 REM
-YourHealth=YourHealth+13
-PRINT "Your Health ";YourHealth
-RETURN
-120 REM
-YourHealth=YourHealth+19
-PRINT "Your Health ";YourHealth
-RETURN
+    END SELECT
 RETURN
 
+100 REM
+    IF ItemMC>0 THEN
+        YourHealth=YourHealth+5
+        PRINT "Your Health ";YourHealth
+        ItemMC=ItemMC-1
+    ELSE
+        PRINT "you ran out of this item"
+    end if
+RETURN
+
+110 REM
+    IF ItemST>0 THEN
+        YourHealth=YourHealth+5
+        PRINT "Your Health ";YourHealth
+        ItemST=ItemST-1
+    ELSE
+        PRINT "you ran out of this item"
+    end if
+RETURN
+
+120 REM
+    IF ItemBCP>0 THEN
+        YourHealth=YourHealth+5
+        PRINT "Your Health ";YourHealth
+        ItemBCP=ItemBCP-1
+    ELSE
+        PRINT "you ran out of this item"
+    end if
+RETURN
+RETURN
 
 
 330 REM

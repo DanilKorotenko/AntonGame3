@@ -123,15 +123,15 @@ SELECT CASE choice
  END SELECT
 100 REM
 YourHealth=YourHealth+5
-PRINT "Your Health ";YourHealth;
+PRINT "Your Health ";YourHealth
 RETURN
 110 REM
 YourHealth=YourHealth+13
-PRINT "Your Health ";YourHealth;
+PRINT "Your Health ";YourHealth
 RETURN
 120 REM
 YourHealth=YourHealth+19
-PRINT "Your Health ";YourHealth;
+PRINT "Your Health ";YourHealth
 RETURN
 RETURN
 

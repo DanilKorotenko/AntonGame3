@@ -8,7 +8,7 @@ RandomDamege=0
 YourHealth=20
 DummyHealth=20
 DummyHappy=3
-DummyName$="testname"
+DummyName$="froggit"
 PRINT DummyName$; " HAS APEARED!"
 PRINT "1. FIGHT"
 PRINT "2. ACT"

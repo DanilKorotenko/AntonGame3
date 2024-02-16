@@ -47,8 +47,7 @@ INPUT "action:" ;choice
     END SELECT
 if DummyHappy = 0 then
 PRINT DummyName$; "is smiling"
-DummySpare=0
-end
+DummySpare=DummySpare=-1
 end if
 if DummyHealth <= 0 then
 NumXP=NumXP+int(rnd(1)*2)
@@ -139,8 +138,8 @@ NumXP=NumXP+int(rnd(1)*2)
 NumGold=NumGold+int(rnd(1)*10)
 PRINT "YOU WON!"
 PRINT DummyName$
-PRINT "you got" ;NumXP
-PRINT "and" ;NumGold
+PRINT "you got" ;NumXP; "XP"
+PRINT "and" ;NumGold; "GOLD"
 end
 end if
 

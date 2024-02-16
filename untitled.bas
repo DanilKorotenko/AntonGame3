@@ -132,6 +132,10 @@ RETURN
     IF DummySpare>0 THEN
         PRINT DummyName$
         PRINT "is too angry to be spared"
+        RandomDamege=int(rnd(1)*5)
+        PRINT "You got "; RandomDamege; " damege!"
+        YourHealth=YourHealth-RandomDamege
+        PRINT "YourHealth "; YourHealth
     end if
     IF DummySpare=0 THEN
         NumXP=NumXP+int(rnd(1)*2)

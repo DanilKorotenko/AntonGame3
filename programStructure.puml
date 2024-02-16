@@ -35,6 +35,7 @@ case (item)
 case (mercy)
     if (DummySpare>0) then (true)
         :DummyName$ is too angry to be spared;
+        :You got random damage;
     endif
 
     if (DummySpare=0) then (true)

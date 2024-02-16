@@ -37,9 +37,6 @@ INPUT "action:" ;choice
         CASE 4
 
             GOSUB 330
-
-            END
-
         CASE ELSE
 
             PRINT "Invalid choice. Please enter a number from the menu."
@@ -128,19 +125,18 @@ RETURN
 
 
 330 REM
-IF DummySpare>0 THEN
-PRINT DummyName$
-PRINT "is too angry to be spared"
-end
-end if
-IF DummySpare=0 THEN
-NumXP=NumXP+int(rnd(1)*2)
-NumGold=NumGold+int(rnd(1)*10)
-PRINT "YOU WON!"
-PRINT DummyName$
-PRINT "you got" ;NumXP; "XP"
-PRINT "and" ;NumGold; "GOLD"
-end
-end if
+    IF DummySpare>0 THEN
+        PRINT DummyName$
+        PRINT "is too angry to be spared"
+    end if
+    IF DummySpare=0 THEN
+        NumXP=NumXP+int(rnd(1)*2)
+        NumGold=NumGold+int(rnd(1)*10)
+        PRINT "YOU WON!"
+        PRINT DummyName$
+        PRINT "you got" ;NumXP; "XP"
+        PRINT "and" ;NumGold; "GOLD"
+        end
+    end if
 
 RETURN

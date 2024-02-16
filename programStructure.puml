@@ -63,24 +63,4 @@ endif
 
 repeat while (true)
 
-'DO
-
-'    SELECT CASE choice
-
-'        CASE 4
-
-'            GOSUB 330
-
-'            END
-
-'        CASE ELSE
-
-'            PRINT "Invalid choice. Please enter a number from the menu."
-
-'    END SELECT
-
-'LOOP UNTIL TRUE
-
-'END
-
 @enduml

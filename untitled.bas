@@ -46,8 +46,7 @@ INPUT "action:" ;choice
 
     END SELECT
 if DummyHappy = 0 then
-PRINT DummyName$
-PRINT "is smiling"
+PRINT DummyName$; "is smiling"
 DummySpare=0
 end
 end if
@@ -55,10 +54,8 @@ if DummyHealth <= 0 then
 NumXP=NumXP+int(rnd(1)*2)
 NumGold=NumGold+int(rnd(1)*10)
 PRINT "YOU WON!"
-PRINT "you got"
-PRINT NumXP
-PRINT "and"
-PRINT NumGold
+PRINT "you got" ;NumXP
+PRINT "and" ;NumGold
 end
 end if
 
@@ -87,8 +84,7 @@ end if
 RETURN
 
 310 REM
-PRINT "you complement"
-PRINT DummyName$
+PRINT "you complement" ;DummyName$
 PRINT "It seems flattered"
 DummyHappy=DummyHappy - 1
 RandomDamege=int(rnd(1)*5)
@@ -101,12 +97,9 @@ RETURN
 
 320 REM
 PRINT "CHOSE ITEM"
-PRINT ItemMC
-PRINT "monster candy(+5 hp)"
-PRINT ItemST
-PRINT "sea tea(+9 hp)"
-PRINT ItemBCP
-PRINT "Butterscotch-Cinnamon Pie(+19 hp)"
+PRINT ItemMC; "monster candy(+5 hp)"
+PRINT ItemST; "sea tea(+9 hp)"
+PRINT ItemBCP; "Butterscotch-Cinnamon Pie(+19 hp)"
 INPUT "Item:" ;choice
 SELECT CASE choice
         CASE 1
@@ -146,10 +139,8 @@ NumXP=NumXP+int(rnd(1)*2)
 NumGold=NumGold+int(rnd(1)*10)
 PRINT "YOU WON!"
 PRINT DummyName$
-PRINT "you got"
-PRINT NumXP
-PRINT "and"
-PRINT NumGold
+PRINT "you got" ;NumXP
+PRINT "and" ;NumGold
 end
 end if
 

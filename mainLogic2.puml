@@ -1,0 +1,33 @@
+@startuml mainLogic2
+start
+
+:Init variables;
+
+repeat
+
+    :Init new enemy;
+
+    repeat
+        :Print menu;
+        :input action;
+
+        switch(Action)
+            case (fight)
+                :took randomDamage;
+                :got random damage;
+        endswitch
+
+        if (YourHealth <= 0) then (true)
+            :Game over;
+            :Congratulations! You got %XP% points!;
+            stop
+        endif
+
+    repeat while (EnemyHealth > 0)
+
+    :Enemy has been defeated!;
+    :Got XP;
+
+repeat while (true)
+
+@enduml

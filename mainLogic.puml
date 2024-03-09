@@ -1,4 +1,4 @@
-@startuml ProgramStructure
+@startuml mainLogic
 start
 :Init variables;
 
